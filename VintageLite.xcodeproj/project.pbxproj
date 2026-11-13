@@ -16,7 +16,7 @@
 		"AB0000000000000000000003" = {
 			"isa" = "PBXFileReference";
 			"lastKnownFileType" = "sourcecode.swift";
-			"path" = "PreviewApp.swift";
+			"path" = "VintageLiteApp.swift";
 			"sourceTree" = "<group>";
 		};
 		"AB0000000000000000000004" = {
@@ -29,7 +29,7 @@
 			"isa" = "PBXFileReference";
 			"explicitFileType" = "wrapper.application";
 			"includeInIndex" = "0";
-			"path" = "VintageLiteUIPreview.app";
+			"path" = "VintageLite.app";
 			"sourceTree" = "BUILT_PRODUCTS_DIR";
 		};
 		"AB0000000000000000000006" = {
@@ -37,6 +37,11 @@
 			"children" = (
 				"AB0000000000000000000003",
 				"AB0000000000000000000004",
+				"AB0000000000000000000014",
+				"AB0000000000000000000015",
+				"AB0000000000000000000016",
+				"AB0000000000000000000017",
+				"AB0000000000000000000018",
 			);
 			"path" = "Preview";
 			"sourceTree" = "<group>";
@@ -62,6 +67,10 @@
 			"buildActionMask" = "2147483647";
 			"files" = (
 				"AB0000000000000000000001",
+				"AB0000000000000000000028",
+				"AB0000000000000000000029",
+				"AB000000000000000000002A",
+				"AB000000000000000000002B",
 			);
 			"runOnlyForDeploymentPostprocessing" = "0";
 		};
@@ -112,48 +121,40 @@
 			"isa" = "XCBuildConfiguration";
 			"name" = "Debug";
 			"buildSettings" = {
-				"GENERATE_INFOPLIST_FILE" = "YES";
-				"INFOPLIST_KEY_CFBundleDisplayName" = "Vintage UI";
-				"INFOPLIST_KEY_LSApplicationCategoryType" = "public.app-category.developer-tools";
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation" = "YES";
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents" = "YES";
-				"INFOPLIST_KEY_UILaunchScreen_Generation" = "YES";
-				"INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone" = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"GENERATE_INFOPLIST_FILE" = "NO";
 				"PRODUCT_BUNDLE_IDENTIFIER" = "dev.eraskye.vintagelite.uipreview";
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"TARGETED_DEVICE_FAMILY" = "1";
 				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"MARKETING_VERSION" = "1.0";
-				"CURRENT_PROJECT_VERSION" = "1";
+				"MARKETING_VERSION" = "2.2.0";
+				"CURRENT_PROJECT_VERSION" = "11";
 				"LD_RUNPATH_SEARCH_PATHS" = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				"CODE_SIGN_STYLE" = "Automatic";
+				"INFOPLIST_FILE" = "Preview/Info.plist";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
 			};
 		};
 		"AB000000000000000000000F" = {
 			"isa" = "XCBuildConfiguration";
 			"name" = "Release";
 			"buildSettings" = {
-				"GENERATE_INFOPLIST_FILE" = "YES";
-				"INFOPLIST_KEY_CFBundleDisplayName" = "Vintage UI";
-				"INFOPLIST_KEY_LSApplicationCategoryType" = "public.app-category.developer-tools";
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation" = "YES";
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents" = "YES";
-				"INFOPLIST_KEY_UILaunchScreen_Generation" = "YES";
-				"INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone" = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"GENERATE_INFOPLIST_FILE" = "NO";
 				"PRODUCT_BUNDLE_IDENTIFIER" = "dev.eraskye.vintagelite.uipreview";
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"TARGETED_DEVICE_FAMILY" = "1";
 				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
-				"MARKETING_VERSION" = "1.0";
-				"CURRENT_PROJECT_VERSION" = "1";
+				"MARKETING_VERSION" = "2.2.0";
+				"CURRENT_PROJECT_VERSION" = "11";
 				"LD_RUNPATH_SEARCH_PATHS" = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				"CODE_SIGN_STYLE" = "Automatic";
+				"INFOPLIST_FILE" = "Preview/Info.plist";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
 			};
 		};
 		"AB0000000000000000000010" = {
@@ -186,8 +187,8 @@
 			);
 			"dependencies" = (
 			);
-			"name" = "VintageLiteUIPreview";
-			"productName" = "VintageLiteUIPreview";
+			"name" = "VintageLite";
+			"productName" = "VintageLite";
 			"productReference" = "AB0000000000000000000005";
 			"productType" = "com.apple.product-type.application";
 		};
@@ -219,6 +220,52 @@
 			"targets" = (
 				"AB0000000000000000000012",
 			);
+		};
+		"AB0000000000000000000014" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "LicenseSession.swift";
+			"sourceTree" = "<group>";
+		};
+		"AB0000000000000000000028" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "AB0000000000000000000014";
+		};
+		"AB0000000000000000000015" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "PrivateContentClient.swift";
+			"sourceTree" = "<group>";
+		};
+		"AB0000000000000000000029" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "AB0000000000000000000015";
+		};
+		"AB0000000000000000000016" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "CatalogManifest.swift";
+			"sourceTree" = "<group>";
+		};
+		"AB000000000000000000002A" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "AB0000000000000000000016";
+		};
+		"AB0000000000000000000017" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "CatalogView.swift";
+			"sourceTree" = "<group>";
+		};
+		"AB000000000000000000002B" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "AB0000000000000000000017";
+		};
+		"AB0000000000000000000018" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "text.plist.xml";
+			"path" = "Info.plist";
+			"sourceTree" = "<group>";
 		};
 	};
 	"rootObject" = "AB0000000000000000000013";
