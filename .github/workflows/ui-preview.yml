@@ -1,0 +1,42 @@
+name: VintageLite UI Preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the SwiftUI preview
+        run: |
+          xcodebuild build \
+            -project VintageLiteUIPreview.xcodeproj \
+            -scheme VintageLiteUIPreview \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/vintage-ui-build" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+
+      - name: Package the preview
+        run: |
+          set -euo pipefail
+          app="$RUNNER_TEMP/vintage-ui-build/Build/Products/Release-iphoneos/VintageLiteUIPreview.app"
+          test -x "$app/VintageLiteUIPreview"
+          test -f "$app/Assets.car"
+          stage="$RUNNER_TEMP/vintage-ui-ipa"
+          mkdir -p "$stage/Payload"
+          ditto "$app" "$stage/Payload/VintageLiteUIPreview.app"
+          cd "$stage"
+          /usr/bin/zip -q -r "$RUNNER_TEMP/VintageLite-UI-Preview-unsigned.ipa" Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VintageLite-UI-Preview-unsigned
+          path: ${{ runner.temp }}/VintageLite-UI-Preview-unsigned.ipa
+          if-no-files-found: error
