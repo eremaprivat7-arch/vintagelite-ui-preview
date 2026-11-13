@@ -942,6 +942,7 @@ struct PatchProjectDetailView: View {
         }
     }
 
+    @MainActor
     private func apply() {
         guard !isWorking, let item, let baseProject = item.project else { return }
         do {
