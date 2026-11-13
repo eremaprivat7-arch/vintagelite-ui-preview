@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vintage-lite-license",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-09",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vintage-lite-keys",
+      "database_id": "17af1ecb-f1b5-408b-800d-2de448a1e3ba",
+      "migrations_dir": "migrations"
+    },
+    {
+      "binding": "CONTENT_DB",
+      "database_name": "vintage-private-content",
+      "database_id": "322453de-f3c6-4f72-9c0c-7d4364546a7e"
+    }
+  ]
+}
