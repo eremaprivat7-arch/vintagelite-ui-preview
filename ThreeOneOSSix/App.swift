@@ -16,7 +16,7 @@ struct ThreeOneOSSixApp: App {
     init() {
         setupLogCapture()
         SandboxAccess.prepare()
-        log("app: VintageLite 2.2.1 launching — iOS \(AppInfo.osVersion) (\(AppInfo.osBuild)) \(AppInfo.machineName)")
+        log("app: VintageLite 2.2.2 launching — iOS \(AppInfo.osVersion) (\(AppInfo.osBuild)) \(AppInfo.machineName)")
     }
 
     private var language: AppLanguage {
@@ -287,11 +287,11 @@ enum VintageRelease {
     static var version: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
             ?? Bundle.main.object(forInfoDictionaryKey: "AppReleaseDisplayVersion") as? String
-            ?? "2.2.1"
+            ?? "2.2.2"
     }
 
     static var build: String {
-        Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "12"
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "13"
     }
 }
 
