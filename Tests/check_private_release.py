@@ -16,14 +16,14 @@ project = (ROOT / "ThreeOneOSSix.xcodeproj/project.pbxproj").read_text()
 assert info["CFBundleIdentifier"] == "com.apple.mobile.MobileHouseArrest"
 assert info["CFBundleDisplayName"] == "VintageLite"
 assert info["LicenseServerURL"] == "https://vintage-lite-license.vintage-lite-keys.workers.dev"
-assert info["CFBundleShortVersionString"] == "2.2.2"
-assert info["CFBundleVersion"] == "13"
+assert info["CFBundleShortVersionString"] == "2.2.3"
+assert info["CFBundleVersion"] == "14"
 assert info["UIFileSharingEnabled"] is False
 assert info["LSSupportsOpeningDocumentsInPlace"] is False
 assert 'path = "../ThreeOneOSFive/Patches"' in project
 assert "F37A0001 /* Patches in Resources */" in project
-assert "MARKETING_VERSION = 2.2.2;" in project
-assert "CURRENT_PROJECT_VERSION = 13;" in project
+assert "MARKETING_VERSION = 2.2.3;" in project
+assert "CURRENT_PROJECT_VERSION = 14;" in project
 assert project.count("INFOPLIST_KEY_CFBundleDisplayName = VintageLite;") == 2
 entitlements = plistlib.loads((APP / "ThreeOneOSSix.entitlements").read_bytes())
 assert entitlements["com.apple.security.application-groups"]
@@ -57,7 +57,7 @@ assert 'password: "@osinxshop"' in library
 screen = (APP / "views/PatchProjectsView.swift").read_text()
 assert "struct PatchProjectDetailView" in screen
 assert "guard await license.checkForApply()" in screen
-assert "DevicePatchService.apply(project: project)" in screen
+assert "DevicePatchService.apply(project: project," in screen
 assert "DevicePatchService.restore" in screen
 assert (APP / "Assets.xcassets/VintageSky.imageset/sky.jpg").is_file()
 schema = (ROOT / "license-server/private-content/schema.sql").read_text().lower()

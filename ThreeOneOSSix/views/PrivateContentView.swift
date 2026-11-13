@@ -294,6 +294,13 @@ struct PrivateContentView: View {
             }
         } catch PatchPackageError.projectAlreadyApplied {
             message = "Этот файл уже применён. Для повторного применения сначала восстанови оригинал."
-        } catch { message = (error as? PrivateContentError)?.localizedDescription ?? "Не удалось применить изменение. Проверь доступ к приложению и выбранный файл." }
+        } catch PatchPackageError.missingAppGroup {
+            message = language.text("appgroup.message")
+        } catch PatchPackageError.accessUnavailable {
+            message = language.text("patch.error.access_unavailable")
+        } catch {
+            message = (error as? PrivateContentError)?.localizedDescription
+                ?? "Не удалось применить изменение. Проверь доступ к приложению и выбранный файл."
+        }
     }
 }
